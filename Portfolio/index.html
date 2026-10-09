@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Anam Asif - BS(Hons) Information Technology Graduate" />
+  <title>Anam Asif | IT Graduate</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.10), transparent 30%),
+        linear-gradient(135deg, #f8fafc, #ffffff);
+      padding-top: 72px;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--dark);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-card {
+      width: 280px;
+      height: 280px;
+      margin: auto;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #dbeafe, #eff6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 10px solid white;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-initial {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .about-info {
+      display: grid;
+      gap: 15px;
+    }
+
+    .info-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--light);
+    }
+
+    .info-card strong {
+      color: var(--dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* SKILLS */
+    #skills {
+      background: var(--light);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      color: var(--dark);
+      margin-bottom: 18px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .skill-list li {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+   .projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: auto;
+  gap: 28px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.project-gallery figure {
+  margin: 0;
+}
+
+.project-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.project-gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: 0.3s;
+      background: white;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #bfdbfe;
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .project-card h3 {
+      color: var(--dark);
+      font-size: 1.4rem;
+      margin: 8px 0 5px;
+    }
+
+    .project-tech {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .project-card ul {
+      padding-left: 20px;
+    }
+
+    /* EXPERIENCE */
+    #experience {
+      background: var(--light);
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 40px 35px;
+      border-left: 2px solid #bfdbfe;
+    }
+
+    .timeline-item:last-child {
+      border-left: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .timeline-item h3 {
+      color: var(--dark);
+      font-size: 1.25rem;
+    }
+
+    .timeline-date {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+    }
+
+    /* EDUCATION */
+    .education-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .education-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      background: white;
+    }
+
+    .education-card h3 {
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .education-card .year {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ACHIEVEMENTS */
+    .achievement {
+      max-width: 800px;
+      margin: auto;
+      padding: 25px;
+      border-left: 4px solid var(--primary);
+      background: var(--light);
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .achievement strong {
+      color: var(--dark);
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--dark);
+      color: white;
+    }
+
+    #contact .section-title h2 {
+      color: white;
+    }
+
+    #contact .section-title p {
+      color: #94a3b8;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      background: #1e293b;
+      padding: 12px 18px;
+      border-radius: 10px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      background: var(--primary);
+    }
+
+    footer {
+      background: #020617;
+      color: #64748b;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        gap: 18px;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-content,
+      .about-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-card {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-initial {
+        font-size: 4rem;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">Anam<span>.</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+
+      <div>
+        <span class="tag">BS(Hons) Information Technology Graduate</span>
+
+        <h1>
+          Hi, I'm <span>Anam Asif</span>
+        </h1>
+
+        <h2>Aspiring IT Professional</h2>
+
+        <p>
+          A motivated Information Technology graduate with a passion for
+          technology, problem-solving, teamwork, and continuous learning.
+          I enjoy turning ideas into practical digital solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+
+     <div class="hero-card">
+  <img src="photo.jpg" alt="Anam Asif" class="profile-photo">
+</div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little about my background and interests</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            I am a BS(Hons) Information Technology graduate from Government
+            Graduate College Jhelum with a CGPA of <strong>3.64/4.00</strong>.
+          </p>
+
+          <p>
+            During my academic journey, I developed practical experience
+            through university projects, including an Examination Management
+            System using Node.js and smaller projects such as a GPA Calculator.
+          </p>
+
+          <p>
+            I have also developed leadership and communication skills through
+            presentations, group projects, class representation, and project
+            coordination.
+          </p>
+
+          <p>
+            I am currently looking for an opportunity where I can apply my
+            knowledge, develop professionally, and contribute positively to
+            an organization.
+          </p>
+        </div>
+
+        <div class="about-info">
+          <div class="info-card">
+            <strong>Education</strong>
+            BS(Hons) Information Technology
+          </div>
+
+          <div class="info-card">
+            <strong>CGPA</strong>
+            3.64 / 4.00
+          </div>
+
+          <div class="info-card">
+            <strong>Location</strong>
+            Jhelum, Pakistan
+          </div>
+
+          <div class="info-card">
+            <strong>Languages</strong>
+            Urdu (Native) · English (B2)
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Skills I have developed through education and practical projects</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Technical Skills</h3>
+
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>Web Designing</li>
+            <li>Microsoft Word</li>
+            <li>Microsoft Excel</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Professional Skills</h3>
+
+          <ul class="skill-list">
+            <li>Leadership</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
+            <li>Presentation</li>
+            <li>Project Coordination</li>
+            <li>Time Management</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Featured Project</h2>
+      <p>A showcase of my final year academic project</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <span class="project-number">01 — FINAL YEAR PROJECT</span>
+
+        <h3>Examination Management System</h3>
+
+        <div class="project-tech">
+          Node.js · Web Application
+        </div>
+
+        <p>
+          Developed an Examination Management System as part of my
+          BS(Hons) Information Technology degree.
+        </p>
+
+        <!-- PROJECT SCREENSHOTS -->
+        <div class="project-gallery">
+
+          <figure>
+            <img src="images/login.png"
+                 alt="Examination Management System login page">
+            <figcaption>Login Page</figcaption>
+          </figure>
+
+         
+
+          <figure>
+            <img src="images/results.png"
+                 alt="Examination Management System results page">
+            <figcaption>Results Page</figcaption>
+          </figure>
+
+        </div>
+
+        <h3>Project Highlights</h3>
+
+        <ul>
+          <li>
+            Developed an online Examination Management System
+            as a final year academic project.
+          </li>
+          <li>
+            Served as Project Manager, coordinating planning,
+            task distribution, and development activities.
+          </li>
+          <li>
+            Collaborated with team members to complete project
+            requirements and milestones.
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p>My practical and academic experience</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <h3>Home Tutor</h3>
+          <div class="timeline-date">Self-Employed · Jhelum, Pakistan</div>
+
+          <ul>
+            <li>Provided one-on-one academic support to students.</li>
+            <li>
+              Explained concepts according to individual student learning
+              needs.
+            </li>
+            <li>
+              Helped students with homework, revision, and exam preparation.
+            </li>
+            <li>
+              Developed communication, organization, and time-management
+              skills.
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <h3>Academic Project Manager</h3>
+          <div class="timeline-date">
+            Final Year Project · Government Graduate College Jhelum
+          </div>
+
+          <ul>
+            <li>Led project planning and task coordination.</li>
+            <li>Distributed tasks among team members.</li>
+            <li>Coordinated development activities and project milestones.</li>
+            <li>Worked collaboratively with team members to complete the project.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Education</h2>
+        <p>My academic background</p>
+      </div>
+
+      <div class="education-grid">
+
+        <div class="education-card">
+          <div class="year">2019 — 2023</div>
+          <h3>BS(Hons) Information Technology</h3>
+          <p>Government Graduate College Jhelum, Pakistan</p>
+          <p><strong>CGPA: 3.64 / 4.00</strong></p>
+        </div>
+
+        <div class="education-card">
+          <div class="year">2017 — 2019</div>
+          <h3>Higher Secondary School Certificate</h3>
+          <p>General Science · Govt. College for Women, Jhelum</p>
+          <p><strong>844 / 1100</strong></p>
+        </div>
+
+        <div class="education-card">
+          <div class="year">2015 — 2017</div>
+          <h3>Secondary School Certificate</h3>
+          <p>Science · Govt. Girls High School No. 1</p>
+          <p><strong>983 / 1100</strong></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Achievements & Activities</h2>
+        <p>Leadership, academic achievements and interests</p>
+      </div>
+
+      <div class="achievement">
+        <strong>Scholarship Certificate</strong>
+        <p>
+          Received a Certificate of Scholarship from the Punjab Educational
+          Endowment Fund (PEEF) in 2017.
+        </p>
+      </div>
+
+      <div class="achievement">
+        <strong>Academic Project Achievement</strong>
+        <p>
+          Developed an online Examination Management System project and
+          secured an A grade.
+        </p>
+      </div>
+
+      <div class="achievement">
+        <strong>Leadership</strong>
+        <p>
+          Gained leadership experience through serving as a class prefect
+          and working as a group representative in university projects.
+        </p>
+      </div>
+
+      <div class="achievement">
+        <strong>Interests</strong>
+        <p>Reading · Teaching · Technology</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Let's Connect</h2>
+        <p>I'm open to entry-level opportunities and professional connections.</p>
+      </div>
+
+      <div class="contact-box">
+
+        <p>
+          If you're looking for a motivated IT graduate who is eager to learn,
+          contribute, and grow professionally, I'd be happy to connect.
+        </p>
+
+        <div class="contact-links">
+
+          <a class="contact-link"
+             href="mailto:anamasif.zero8@gmail.com">
+            ✉ Email Me
+          </a>
+
+         
+
+          <!-- Add your LinkedIn URL here -->
+         <a class="contact-link"
+   href="https://pk.linkedin.com/in/anam-asif-b1692b43b"
+   target="_blank"
+   rel="noopener noreferrer">
+  LinkedIn
+</a>
+
+        
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> Anam Asif. All rights reserved.
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Close mobile menu after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    // Current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
